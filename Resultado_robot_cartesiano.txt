@@ -1,0 +1,125 @@
+Coordenadas generalizadas
+(l1(t), l2(t), l3(t), th4(t))
+
+Velocidades generalizadas
+/  d         d         d         d        \
+| -- l1(t), -- l2(t), -- l3(t), -- th4(t) |
+\ dt        dt        dt        dt        /
+
+Matriz de Transformación local A1
+/ 0, 0, -1,   0   \
+|                 |
+| 0, 1,  0,   0   |
+|                 |
+| 1, 0,  0, l1(t) |
+|                 |
+\ 0, 0,  0,   1   /
+
+Matriz de Transformación global T1
+/ 0, 0, -1,   0   \
+|                 |
+| 0, 1,  0,   0   |
+|                 |
+| 1, 0,  0, l1(t) |
+|                 |
+\ 0, 0,  0,   1   /
+
+Matriz de Transformación local A2
+/ 1, 0,  0,   0   \
+|                 |
+| 0, 0, -1,   0   |
+|                 |
+| 0, 1,  0, l2(t) |
+|                 |
+\ 0, 0,  0,   1   /
+
+Matriz de Transformación global T2
+/ 0, -1,  0, -l2(t) \
+|                   |
+| 0,  0, -1,    0   |
+|                   |
+| 1,  0,  0,  l1(t) |
+|                   |
+\ 0,  0,  0,    1   /
+
+Matriz de Transformación local A3
+/ 1, 0, 0,   0   \
+|                |
+| 0, 1, 0,   0   |
+|                |
+| 0, 0, 1, l3(t) |
+|                |
+\ 0, 0, 0,   1   /
+
+Matriz de Transformación global T3
+/ 0, -1,  0, -l2(t) \
+|                   |
+| 0,  0, -1, -l3(t) |
+|                   |
+| 1,  0,  0,  l1(t) |
+|                   |
+\ 0,  0,  0,    1   /
+
+Matriz de Transformación local A4
+/ 1, 0, 0,   0   \
+|                |
+| 0, 1, 0,   0   |
+|                |
+| 0, 0, 1, l4(t) |
+|                |
+\ 0, 0, 0,   1   /
+
+Matriz de Transformación global T4
+/ 0, -1,  0,      -l2(t)     \
+|                            |
+| 0,  0, -1, - l3(t) - l4(t) |
+|                            |
+| 1,  0,  0,      l1(t)      |
+|                            |
+\ 0,  0,  0,        1        /
+
+Jacobiano lineal obtenido de forma diferencial
+/ 0, -1,  0, 0 \
+|              |
+| 0,  0, -1, 0 |
+|              |
+\ 1,  0,  0, 0 /
+
+Jacobiano lineal obtenido de forma analítica
+/ 0, -1,  0,  0 \
+|               |
+| 0,  0, -1, -1 |
+|               |
+\ 1,  0,  0,  0 /
+
+Jacobiano ángular obtenido de forma analítica
+/ 0, 0, 0, 0 \
+|            |
+| 0, 0, 0, 0 |
+|            |
+\ 0, 0, 0, 0 /
+
+Velocidad lineal obtenida mediante el Jacobiano lineal
+/         ________       \
+|          d             |
+|       - -- l2(t)       |
+|         dt             |
+|                        |
+|   ________   _________ |
+|    d          d        |
+| - -- l3(t) - -- th4(t) |
+|   dt         dt        |
+|                        |
+|        ________        |
+|         d              |
+|        -- l1(t)        |
+\        dt              /
+
+Velocidad angular obtenida mediante el Jacobiano angular
+/ 0 \
+|   |
+| 0 |
+|   |
+\ 0 /
+
+>> 
